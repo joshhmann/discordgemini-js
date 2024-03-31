@@ -1,0 +1,21 @@
+name: Build and Push Image to GHCR
+
+on:
+  push:
+    branches: [ main ] 
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build and Push Image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.joshhmann }}/discordgemini-js:latest
+          secrets:
+            username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+            password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
