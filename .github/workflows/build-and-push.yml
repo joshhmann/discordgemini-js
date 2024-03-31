@@ -13,6 +13,7 @@ jobs:
       - name: Build and Push Image
         uses: docker/build-push-action@v3
         with:
+          debug: true
           context: .
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/discordgemini-js:latest
