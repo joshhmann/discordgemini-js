@@ -5,4 +5,4 @@ services:
     build: .  # Assuming your Dockerfile is in the root
     restart: always  # Handles restarts (useful for Kubernetes)
     env_file:
-      - .env  # Load environment variables from a file
+      - .env  # Load environment variables from a fil
