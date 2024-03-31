@@ -15,7 +15,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.joshhmann }}/discordgemini-js:latest
+          tags: ghcr.io/${{ github.repository_owner }}/discordgemini-js:latest
           secrets:
           username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
           password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
