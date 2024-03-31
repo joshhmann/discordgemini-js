@@ -2,7 +2,7 @@ name: Build and Push Image to GHCR
 
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ]
 
 jobs:
   build-and-push:
@@ -17,6 +17,6 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/discordgemini-js:latest
-          secrets:
-          username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
-          password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+          secrets: |
+            username=${{ secrets.DOCKER_REGISTRY_USERNAME }}
+            password=${{ secrets.DOCKER_REGISTRY_PASSWORD }}
