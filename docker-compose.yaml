@@ -1,0 +1,10 @@
+version: "3.9"  # Use a recent version
+
+services:
+  discord-bot:
+    build: .  # Assuming your Dockerfile is in the root
+    restart: always  # Handles restarts (useful for Kubernetes)
+    environment:
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN} # Environment variable handling
+      - DISCORD_BOT_PREFIX=${DISCORD_BOT_PREFIX} 
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
