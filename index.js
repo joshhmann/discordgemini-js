@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const dotenv = require('dotenv');
 const { Client, GatewayIntentBits, Partials } = require('discord.js');
-const { askGemini } = require('./gemini');
-const commands = require('./commands');
+const { askGemini } = require('./src/models/gemini');
+const commands = require('./src/commands/commands');
 
 // Load environment variables from .env file
 dotenv.config();
