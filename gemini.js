@@ -28,7 +28,7 @@ async function askGemini(question, imagePaths = []) {
         parts = [...parts, ...imagePaths.map((path) => fileToGenerativePart(path, "image/jpeg"))];
     }
 
-    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+    const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro-latest"});
     const result = await model.generateContent(parts);
     const response = await result.response;
     return response.text();
